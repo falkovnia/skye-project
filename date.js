@@ -1,5 +1,5 @@
 function formatStopwatchOutput({ days, hours, minutes, seconds }) {
-    return `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+    return `${days} days, ${hours} hours,<br class="block sm:hidden"> ${minutes} minutes, ${seconds} seconds`;
   }
 
 function timeSince(dateString) {
@@ -37,8 +37,8 @@ function updateTime() {
     const girls_dateElement = document.getElementById('girls-date');
     // Update the content of the date element with the time difference
     // Format the output as "Days: W, Hours: X, Minutes: Y, Seconds: Z"
-    boy_dateElement.textContent = `${formatStopwatchOutput(boy_result)} ago`;
-    girls_dateElement.textContent = `${formatStopwatchOutput(girl_result)} ago`;
+    boy_dateElement.innerHTML = `${formatStopwatchOutput(boy_result)} ago`;
+    girls_dateElement.innerHTML = `${formatStopwatchOutput(girl_result)} ago`;
 }
 
 // Call the updateTime function
